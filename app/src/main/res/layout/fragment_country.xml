@@ -2,6 +2,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:tools="http://schemas.android.com/tools"
     >
+    <data>
+        <variable
+            name="selectedCountry"
+            type="com.example.kotlincountrieslist.model.CountryModel" />
+
+    </data>
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -18,7 +24,8 @@ xmlns:tools="http://schemas.android.com/tools"
         android:scaleType="center"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
-        android:src="@mipmap/ic_launcher_round" />
+        android:downloadUrl="@{selectedCountry.imageUrl}"
+        />
 
     <TextView
         android:id="@+id/countryName"
@@ -27,7 +34,7 @@ xmlns:tools="http://schemas.android.com/tools"
         android:layout_below="@id/image_Country"
         android:layout_centerHorizontal="true"
         android:padding="7dp"
-        android:text="country Name"
+        android:text="@{selectedCountry.countryName}"
         android:textSize="28sp"
         android:textStyle="bold"
         android:layout_margin="7dp"/>
@@ -36,7 +43,7 @@ xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/countryCapital"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="country capital"
+        android:text="@{selectedCountry.countryCapital}"
         android:layout_below="@id/countryName"
         android:textSize="24sp"
         android:layout_centerHorizontal="true"
@@ -48,7 +55,7 @@ xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/countryRegion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="country Regon"
+        android:text="@{selectedCountry.countryRegion}"
         android:layout_below="@id/countryCapital"
         android:textSize="24sp"
         android:layout_centerHorizontal="true"
@@ -61,7 +68,7 @@ xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/countryCurrency"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="country currency"
+        android:text="@{selectedCountry.countryCurrency}"
         android:layout_below="@id/countryRegion"
         android:textSize="24sp"
         android:layout_centerHorizontal="true"
@@ -73,7 +80,7 @@ xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/countryLanguage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="country language"
+        android:text="@{selectedCountry.countryLanguage}"
         android:layout_below="@id/countryCurrency"
         android:textSize="24sp"
         android:layout_centerHorizontal="true"
